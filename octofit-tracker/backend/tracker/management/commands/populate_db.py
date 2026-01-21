@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 import random
 
 class Command(BaseCommand):
-    help = 'Populate the database with initial data for the OctoFit Tracker'
+    help = 'Populate the octofit_db database with test data for the OctoFit Tracker application'
 
     def handle(self, *args, **options):
         self.stdout.write(self.style.SUCCESS('Starting database population...'))

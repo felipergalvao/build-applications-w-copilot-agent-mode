@@ -80,9 +80,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 
 
-# Database
+# Database Configuration for MongoDB with Djongo
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# MongoDB connection using Djongo ORM
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
