@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 # Database Configuration for MongoDB with Djongo
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# MongoDB connection using Djongo ORM
+# MongoDB connection using djongo ORM adapter
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -98,6 +98,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
+# Note: Djongo requires proper password validation configuration for user creation
 
 AUTH_PASSWORD_VALIDATORS = [
     {
