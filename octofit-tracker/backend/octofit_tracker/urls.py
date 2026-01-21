@@ -16,28 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import os
+from rest_framework.routers import DefaultRouter
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from tracker.views import (
+    UserProfileViewSet, ActivityTypeViewSet, ActivityViewSet,
+    TeamViewSet, LeaderboardViewSet, LeaderboardEntryViewSet,
+    WorkoutSuggestionViewSet
+)
 
-# API Root View
-class APIRoot(APIView):
-    def get(self, request, format=None):
-        codespace_name = os.environ.get('CODESPACE_NAME')
-        if codespace_name:
-            base_url = f"https://{codespace_name}-8000.app.github.dev"
-        else:
-            base_url = "http://localhost:8000"
-        
-        return Response({
-            'message': 'OctoFit Tracker API',
-            'api': f'{base_url}/api/',
-            'admin': f'{base_url}/admin/',
-        })
-
-api_root = APIRoot.as_view()
+# Create router for API endpoints
+router = DefaultRouter()
+router.register(r'profiles', UserProfileViewSet, basename='profile')
+router.register(r'activity-types', ActivityTypeViewSet, basename='activity-type')
+router.register(r'activities', ActivityViewSet, basename='activity')
+router.register(r'teams', TeamViewSet, basename='team')
+router.register(r'leaderboards', LeaderboardViewSet, basename='leaderboard')
+router.register(r'leaderboard-entries', LeaderboardEntryViewSet, basename='leaderboard-entry')
+router.register(r'suggestions', WorkoutSuggestionViewSet, basename='suggestion')
 
 urlpatterns = [
-    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
-    path('api/', include('tracker.urls')),
+    path('api/', include(router.urls)),
 ]
