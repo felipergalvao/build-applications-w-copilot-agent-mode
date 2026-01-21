@@ -35,3 +35,21 @@ Django version 4.1.7, using settings 'octofit_tracker.settings'
 Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 Watching for file changes with StatReloader
+Not Found: /
+[21/Jan/2026 13:51:44] "GET / HTTP/1.1" 404 2172
+[21/Jan/2026 13:57:16] "GET /api/teams/ HTTP/1.1" 200 2194
+[21/Jan/2026 13:57:19] "GET /api/teams/ HTTP/1.1" 200 2194
+Unauthorized: /api/profiles/
+[21/Jan/2026 13:57:49] "GET /api/profiles/ HTTP/1.1" 401 58
+Unauthorized: /api/profiles/
+[21/Jan/2026 13:57:49] "GET /api/profiles/ HTTP/1.1" 401 58
+Unauthorized: /api/activities/
+[21/Jan/2026 13:57:54] "GET /api/activities/ HTTP/1.1" 401 58
+Unauthorized: /api/activities/
+[21/Jan/2026 13:57:54] "GET /api/activities/ HTTP/1.1" 401 58
+[21/Jan/2026 13:58:02] "GET /api/leaderboard-entries/ HTTP/1.1" 200 14182
+[21/Jan/2026 13:58:03] "GET /api/leaderboard-entries/ HTTP/1.1" 200 14182
+Unauthorized: /api/suggestions/
+[21/Jan/2026 13:58:06] "GET /api/suggestions/ HTTP/1.1" 401 58
+Unauthorized: /api/suggestions/
+[21/Jan/2026 13:58:06] "GET /api/suggestions/ HTTP/1.1" 401 58
