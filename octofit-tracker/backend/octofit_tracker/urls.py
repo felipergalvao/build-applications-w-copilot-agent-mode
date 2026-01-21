@@ -35,6 +35,13 @@ router.register(r'leaderboards', LeaderboardViewSet, basename='leaderboard')
 router.register(r'leaderboard-entries', LeaderboardEntryViewSet, basename='leaderboard-entry')
 router.register(r'suggestions', WorkoutSuggestionViewSet, basename='suggestion')
 
+# Use codespace environment variable for the URL
+codespace_name = os.environ.get('CODESPACE_NAME')
+if codespace_name:
+    base_url = f"https://{codespace_name}-8000.app.github.dev"
+else:
+    base_url = "http://localhost:8000"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),

@@ -3,3 +3,16 @@ Watching for file changes with StatReloader
 [21/Jan/2026 13:40:23] "GET /api/ HTTP/1.1" 200 390
 [21/Jan/2026 13:40:30] "GET /api/teams/ HTTP/1.1" 200 2194
 [21/Jan/2026 13:40:30] "GET /api/activity-types/ HTTP/1.1" 200 573
+/workspaces/build-applications-w-copilot-agent-mode/octofit-tracker/backend/octofit_tracker/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 21, 2026 - 13:40:17
+Django version 4.1.7, using settings 'octofit_tracker.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /
+[21/Jan/2026 13:41:15] "GET / HTTP/1.1" 404 2172
+Not Found: /
+[21/Jan/2026 13:41:21] "GET / HTTP/1.1" 404 2172
